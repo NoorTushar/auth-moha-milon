@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+
 const Home = () => {
-   return <div>Home</div>;
+   const asset = useContext(AuthContext);
+   return <div>{asset}</div>;
 };
 
 export default Home;
