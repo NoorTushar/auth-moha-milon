@@ -4,15 +4,23 @@ import { Link } from "react-router-dom";
 const Login = () => {
    const handleLogin = (e) => {
       e.preventDefault();
+
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+
+      console.log(email, password);
    };
 
    return (
       <div className="h-[calc(100vh-68px)] flex flex-col items-center justify-center">
          <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
             <h1 className="text-2xl font-bold text-center">Login</h1>
-            <form onSubmit={handleLogin} novalidate="" className="space-y-6">
+            <form onSubmit={handleLogin} className="space-y-6">
                <div className="space-y-1 text-sm">
-                  <label for="username" className="block dark:text-gray-600">
+                  <label
+                     htmlFor="username"
+                     className="block dark:text-gray-600"
+                  >
                      Email
                   </label>
                   <input
@@ -24,7 +32,10 @@ const Login = () => {
                   />
                </div>
                <div className="space-y-1 text-sm">
-                  <label for="password" className="block dark:text-gray-600">
+                  <label
+                     htmlFor="password"
+                     className="block dark:text-gray-600"
+                  >
                      Password
                   </label>
                   <input
@@ -39,8 +50,11 @@ const Login = () => {
                      </a>
                   </div>
                </div>
-               <button className="block w-full p-3 text-center  dark:text-gray-50 dark:bg-violet-600 rounded-lg">
-                  Sign in
+               <button
+                  type="submit"
+                  className="block w-full p-3 text-center  dark:text-gray-50 dark:bg-violet-600 rounded-lg"
+               >
+                  Login
                </button>
             </form>
             <div className="flex items-center pt-4 space-x-1">
