@@ -1,17 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
    const navLinks = (
       <>
          <li>
-            <Link to={`/`}>Home</Link>
+            <NavLink to={`/`}>Home</NavLink>
          </li>
          <li>
-            <Link to={`/login`}>Login</Link>
+            <NavLink to={`/login`}>Login</NavLink>
          </li>
          <li>
-            <Link to={`/register`}>Register</Link>
+            <NavLink to={`/register`}>Register</NavLink>
          </li>
       </>
    );
