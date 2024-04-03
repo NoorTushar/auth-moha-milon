@@ -9,6 +9,7 @@ import Home from "./components/Home.jsx";
 import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
+import GoogleAuth from "./components/GoogleAuth.jsx";
 
 const router = createBrowserRouter([
    {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
          {
             path: "/register",
             element: <Register></Register>,
+         },
+         {
+            path: "/googleAuth",
+            element: <GoogleAuth></GoogleAuth>,
          },
       ],
    },
