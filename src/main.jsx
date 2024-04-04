@@ -12,6 +12,9 @@ import AuthProvider from "./providers/AuthProvider.jsx";
 import GoogleAuth from "./components/GoogleAuth.jsx";
 import PracRegister from "./components/PracRegister.jsx";
 import PracLogin from "./components/PracLogin.jsx";
+import Orders from "./components/Orders.jsx";
+import PrivateRoute from "./Routes/PrivateRoute.jsx";
+import Profile from "./components/Profile.jsx";
 
 const router = createBrowserRouter([
    {
@@ -29,6 +32,22 @@ const router = createBrowserRouter([
          {
             path: "/register",
             element: <Register></Register>,
+         },
+         {
+            path: "/orders",
+            element: (
+               <PrivateRoute>
+                  <Orders></Orders>
+               </PrivateRoute>
+            ),
+         },
+         {
+            path: "/profile",
+            element: (
+               <PrivateRoute>
+                  <Profile></Profile>
+               </PrivateRoute>
+            ),
          },
          {
             path: "/googleAuth",

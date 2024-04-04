@@ -25,6 +25,16 @@ const Navbar = () => {
          <li>
             <NavLink to={`/register`}>Register</NavLink>
          </li>
+         {user && (
+            <>
+               <li>
+                  <NavLink to={`/orders`}>Orders</NavLink>
+               </li>
+               <li>
+                  <NavLink to={`/profile`}>Profile</NavLink>
+               </li>
+            </>
+         )}
          <li>
             <NavLink to={`/googleAuth`}>Google Login</NavLink>
          </li>

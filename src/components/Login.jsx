@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
-   const { signInUser } = useContext(AuthContext);
+   const navigate = useNavigate();
+   const { signInUser, singInWithGoogle } = useContext(AuthContext);
 
    const handleLogin = (e) => {
       e.preventDefault();
@@ -16,9 +17,21 @@ const Login = () => {
       signInUser(email, password)
          .then((result) => {
             console.log(result);
+            e.target.reset();
+            navigate("/");
          })
          .catch((error) => {
             console.log(error.message);
+         });
+   };
+
+   const handleSignInWithGoogle = () => {
+      singInWithGoogle()
+         .then((result) => {
+            console.log(result.user);
+         })
+         .catch((error) => {
+            console.error(error);
          });
    };
 
@@ -77,6 +90,7 @@ const Login = () => {
             </div>
             <div className="flex justify-center space-x-4">
                <button
+                  onClick={handleSignInWithGoogle}
                   aria-label="Log in with Google"
                   className="p-3 rounded-sm"
                >
