@@ -5,7 +5,11 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
    const asset = "gold";
-   return <AuthContext.Provider value={asset}>{children}</AuthContext.Provider>;
+   return (
+      <>
+         <AuthContext.Provider value={asset}>{children}</AuthContext.Provider>;
+      </>
+   );
 };
 
 AuthProvider.propTypes = {

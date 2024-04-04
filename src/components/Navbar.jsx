@@ -16,6 +16,12 @@ const Navbar = () => {
          <li>
             <NavLink to={`/googleAuth`}>Google Login</NavLink>
          </li>
+         <li>
+            <NavLink to={`/pracRegister`}>Prac Register</NavLink>
+         </li>
+         <li>
+            <NavLink to={`/pracLogin`}>Prac Login</NavLink>
+         </li>
       </>
    );
    return (

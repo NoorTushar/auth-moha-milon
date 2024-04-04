@@ -10,6 +10,8 @@ import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import GoogleAuth from "./components/GoogleAuth.jsx";
+import PracRegister from "./components/PracRegister.jsx";
+import PracLogin from "./components/PracLogin.jsx";
 
 const router = createBrowserRouter([
    {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
          {
             path: "/googleAuth",
             element: <GoogleAuth></GoogleAuth>,
+         },
+         {
+            path: "/pracRegister",
+            element: <PracRegister></PracRegister>,
+         },
+         {
+            path: "/pracLogin",
+            element: <PracLogin></PracLogin>,
          },
       ],
    },
